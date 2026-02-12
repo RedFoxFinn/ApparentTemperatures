@@ -1,0 +1,25 @@
+
+.app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.app h1 {
+  font-size: 2.5rem;
+  padding-right: 5rem;
+  text-decoration: dotted underline #007bff;
+}
+
+.app h1 .star {
+  color: #007bff;
+}
+
+header {
+  display: inline-flex;
+  align-items: center;
+}
+
+.toggles {
+  height: 3rem;
+}

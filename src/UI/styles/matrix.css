@@ -1,0 +1,42 @@
+
+thead th, tbody th, tbody td {
+  text-align: center;
+  min-width: 3rem;
+  max-width: 8rem;
+  padding: 0.5rem;
+  vertical-align: middle;
+  z-index: 1;
+}
+
+tbody td:hover {
+  z-index: 2;
+  outline: 6px double firebrick;
+}
+
+tbody td.none {
+  background-color: #99ee99;
+}
+
+tbody td.mild {
+  background-color: #2288bb;
+}
+
+tbody td.moderate {
+  color: white;
+  background-color: #0055cc;
+}
+
+tbody td.severe {
+  color: white;
+  background-color: #000099;
+}
+
+tbody td.dangerous {
+  color: white;
+  background-color: #000055;
+}
+
+tbody td.extreme {
+  color: white;
+  background-color: #000022;
+}

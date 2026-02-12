@@ -1,0 +1,42 @@
+
+thead th, tbody th, tbody td {
+  text-align: center;
+  min-width: 3rem;
+  max-width: 8rem;
+  padding: 0.5rem;
+  vertical-align: middle;
+  z-index: 1;
+}
+
+tbody td:hover {
+  z-index: 2;
+  outline: 6px double rgb(108, 41, 184);
+}
+
+tbody td.none-alt {
+  background-color: #00e20b;
+}
+
+tbody td.mild-alt {
+  background-color: #01f080;
+}
+
+tbody td.moderate-alt {
+  color: white;
+  background-color: #cce200;
+}
+
+tbody td.severe-alt {
+  color: white;
+  background-color: #ebad03;
+}
+
+tbody td.dangerous-alt {
+  color: white;
+  background-color: #db4002;
+}
+
+tbody td.extreme-alt {
+  color: white;
+  background-color: #dd0000;
+}
