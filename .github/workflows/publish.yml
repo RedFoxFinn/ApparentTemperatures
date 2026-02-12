@@ -3,9 +3,16 @@ on:
   push:
     branches:
       - main
+permissions:
+  contents: read      # to read the repository contents
+  pages: write      # to deploy to Pages
+  id-token: write   # to verify the deployment originates from an appropriate source
 jobs:
   build:
     runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v6
       - name: Use Node v22
@@ -16,16 +23,10 @@ jobs:
         run: npm install
       - name: Build the project
         run: npm run build
-  deploy:
-    needs: build
-    permissions:
-      pages: write      # to deploy to Pages
-      id-token: write   # to verify the deployment originates from an appropriate source
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
-    steps:
+      - name: Upload artifact for deployment job
+        uses: actions/upload-artifact@v3
+        with:
+          path: './dist'
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v4 # or specific "vX.X.X" version tag for this action
+        uses: actions/deploy-pages@v4
