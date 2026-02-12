@@ -8,7 +8,7 @@ permissions:
   pages: write      # to deploy to Pages
   id-token: write   # to verify the deployment originates from an appropriate source
 jobs:
-  build:
+  deployment:
     runs-on: ubuntu-latest
     environment:
       name: github-pages
@@ -26,7 +26,9 @@ jobs:
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v6
         with:
+          name: github-pages
           path: './dist'
+          overwrite: true
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
