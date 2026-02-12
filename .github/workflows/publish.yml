@@ -24,7 +24,7 @@ jobs:
       - name: Build the project
         run: npm run build
       - name: Upload artifact for deployment job
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v6
         with:
           path: './dist'
       - name: Deploy to GitHub Pages
