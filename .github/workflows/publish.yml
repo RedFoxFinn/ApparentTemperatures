@@ -27,7 +27,7 @@ jobs:
         uses: actions/upload-artifact@v6
         with:
           name: github-pages
-          path: /dist
+          path: ./dist
           overwrite: true
       - name: Deploy to GitHub Pages
         id: deployment
