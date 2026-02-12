@@ -23,14 +23,9 @@ jobs:
         run: npm install
       - name: Build the project
         run: npm run build
-      - name: Permissions
-        run: chmod -R a+rX ./dist
-      - name: Upload artifact for deployment job
-        uses: actions/upload-artifact@v6
+      - name: Push to gh-pages branch
+        uses: peaceiris/actions-gh-pages@v4
         with:
-          name: github-pages
-          path: ./dist
-          overwrite: true
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
+          publish_branch: gh-pages
