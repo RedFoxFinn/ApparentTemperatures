@@ -5,7 +5,7 @@ import { windChill } from '../helpers/windChillCalc'
 import { classifyChill } from "../helpers/cssClassifier";
 import Tooltip from "./Tooltip";
 import './styles/matrix.css'
-import './styles/matrix-alt.css'
+//import './styles/matrix-alt.css'
 import './styles/tooltip.css'
 
 const T_RANGE = {'start': 10, 'end': -60}    // Temperature range in Celsius
