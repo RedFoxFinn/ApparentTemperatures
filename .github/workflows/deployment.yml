@@ -44,7 +44,7 @@ jobs:
         uses: actions/upload-pages-artifact@v4
         with:
           # Upload dist folder
-          name: 'gh-pages'
+          name: 'github-pages'
           path: './dist'
       - name: Deploy to GitHub Pages
         id: deployment
