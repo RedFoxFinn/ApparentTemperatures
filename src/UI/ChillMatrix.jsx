@@ -23,14 +23,17 @@ export const ChillMatrix = () => {
     <table className="chill-matrix">
       <thead>
         <tr>
-          <th>°C \ m/s</th>
-          {WIND_SPEEDS.map(v => <th key={v}>{v} m/s</th>)}
+          <th>°C</th>
+          <th colspan="7">Wind speed (m / s)  {"\u21E2"}</th></tr>
+        <tr>
+          <th> </th>
+          {WIND_SPEEDS.map(v => <th key={v}>{v}</th>)}
         </tr>
       </thead>
       <tbody>
         {TEMPERATURES.map((t, i) => (
           <tr key={t}>
-            <th>{t} °C</th>
+            <th className="bodyheader">{t} °C</th>
             {chillValues[i].map((chill, j) => <td className={`${classifyChill(chill)} tooltip`} key={j}>{chill}<Tooltip val={chill} temp={t} wind={j+1}/></td>)}
           </tr>
         ))}
