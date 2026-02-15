@@ -7,7 +7,7 @@ const Tooltip = ({val, temp, wind}) => {
       <tr className={classifyChill(temp)}><td>Temperature °C</td><td>{temp}</td></tr>
       <tr className={classifyWind(wind)}><td>Wind m/s</td><td>{wind}</td></tr>
       <tr className={classifyChill(val)}><td>Wind chill</td><td>{val}</td></tr>
-      <tr className='diff'><td>Difference</td><td>{(val-temp).toFixed(2)}</td></tr>
+      <tr className='diff'><td>Difference</td><td>{(val-temp).toFixed(1)}</td></tr>
     </table>
   )
 }

@@ -1,4 +1,16 @@
 
+.matrix-container {
+  margin-left: 1rem;
+  width: 95%;
+}
+
+@media (max-width: 1439px) {
+  .matrix-container {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
 thead th, tbody th, tbody td {
   text-align: center;
   min-width: 3rem;

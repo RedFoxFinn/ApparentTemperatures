@@ -1,14 +1,49 @@
 
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+#root {
+  width: 100%;
+}
+
+/* Only scale for very large screens */
+@media (min-width: 1500px) {
+  #root {
+    transform-origin: top left;
+    width: max-content;
+    min-width: 100%;
+    transform: scale(0.95);
+  }
+}
+
 .app {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
+@media (max-width: 799px) {
+  .app {
+    align-items: center;
+    padding: 0 1rem;
+  }
+}
+
 .app h1 {
   font-size: 2.5rem;
   padding-right: 5rem;
   text-decoration: dotted underline #007bff;
+}
+
+@media (max-width: 1279px) {
+  .app h1 {
+    font-size: 1.5rem;
+    padding-right: 0;
+    text-align: center;
+  }
 }
 
 .app h1 .star {

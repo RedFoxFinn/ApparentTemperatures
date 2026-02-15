@@ -19,20 +19,22 @@ export const ChillMatrix = () => {
   const chillValues = useMemo(() => {
     return TEMPERATURES.map(t => WIND_SPEEDS.map(v => windChill(t, v, 'FMI')))
   }, []);
-  return <table className="chill-matrix">
-    <thead>
-      <tr>
-        <th>°C \ m/s</th>
-        {WIND_SPEEDS.map(v => <th key={v}>{v} m/s</th>)}
-      </tr>
-    </thead>
-    <tbody>
-      {TEMPERATURES.map((t, i) => (
-        <tr key={t}>
-          <th>{t} °C</th>
-          {chillValues[i].map((chill, j) => <td className={`${classifyChill(chill)} tooltip`} key={j}>{chill}<Tooltip val={chill} temp={t} wind={j+1}/></td>)}
+  return <div className="matrix-container">
+    <table className="chill-matrix">
+      <thead>
+        <tr>
+          <th>°C \ m/s</th>
+          {WIND_SPEEDS.map(v => <th key={v}>{v} m/s</th>)}
         </tr>
-      ))}
-    </tbody>
-  </table>
+      </thead>
+      <tbody>
+        {TEMPERATURES.map((t, i) => (
+          <tr key={t}>
+            <th>{t} °C</th>
+            {chillValues[i].map((chill, j) => <td className={`${classifyChill(chill)} tooltip`} key={j}>{chill}<Tooltip val={chill} temp={t} wind={j+1}/></td>)}
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  </div>
 }
