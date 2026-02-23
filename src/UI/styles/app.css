@@ -7,23 +7,15 @@ body {
 
 #root {
   width: 100%;
-}
-
-/* Only scale for very large screens */
-@media (min-width: 1500px) {
-  #root {
-    transform-origin: top left;
-    width: max-content;
-    min-width: 100%;
-    transform: scale(0.95);
-  }
+  display: flex;
+  justify-content: center;
 }
 
 .app {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 100%;
+  max-width: 100%;
 }
 
 @media (max-width: 799px) {
@@ -36,11 +28,11 @@ header {
   width: 100%;
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
 .app h1 {
   font-size: 2.5rem;
-  padding-right: 5rem;
   text-decoration: dotted underline #007bff;
 }
 
@@ -54,11 +46,6 @@ header {
 
 .app h1 .star {
   color: #007bff;
-}
-
-header {
-  display: inline-flex;
-  align-items: center;
 }
 
 .toggles {
